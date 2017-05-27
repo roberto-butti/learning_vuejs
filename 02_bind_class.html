@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>01 Bind Attributes</title>
+		<title>02 Bind Class</title>
+		<style type="text/css">
+			.color-red { color: red; }
+			.color-blue { color: blue; }
+		</style>
 	</head>
 	<body>
 		<div id="root">
-			<h1>{{ title }}</h1>
+			<h1 v-bind:class="class_title">{{ title }}</h1>
 			<button v-bind:title="titlevalue">Hover me</button>
 		</div>
 		<script src="https://unpkg.com/vue@2.3.3/dist/vue.js"></script>
@@ -14,7 +18,8 @@
 				el: "#root",
 				data: {
 					title: "This is title",
-					titlevalue: "Hello, page loaded at: " + new Date()
+					titlevalue: "Hello, page loaded at: " + new Date(),
+					class_title: "color-red"
 				}
 			});
 		</script>
