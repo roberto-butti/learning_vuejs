@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>03 Event Click Button Change things</title>
+		<style type="text/css">
+			.color-red { color: red; }
+			.color-blue { color: blue; }
+		</style>
+	</head>
+	<body>
+		<div id="root">
+			<h1 v-bind:class="class_title" >{{ title }}</h1>
+			<button v-on:click="changecolor('red')" class="color-red">RED</button>
+			<button v-on:click="changecolor('blue')" class="color-blue">BLUE</button>
+		</div>
+		<script src="https://unpkg.com/vue@2.3.3/dist/vue.js"></script>
+		<script>
+			var app = new Vue({
+				el: "#root",
+				data: {
+					title: "Choose your color",
+					class_title: ""
+				},
+				methods: {
+					changecolor: function (color) {
+						this.class_title="color-"+color;
+						this.title= "Nice color: "+color;
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
